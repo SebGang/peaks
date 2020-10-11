@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Mountain peaks</h1>
+  <p>This site allows you to create/read/update/delete peaks,
+    and  retrieve a list of peaks in a given geographical bounding box, defined by lat min&max / long min&max.
+  </p>
+  <h2>User Guide</h2>
+  <p>Through the side pannel you can acces to the list of peaks stored in the database by clicking
+  on <a href="{% url 'peaks-list' %}">All peaks</a>. <br>
+  There you will be able to create/read/update/delete.
+  To go back to home page you have to manually modify the url to http://127.0.0.1:8000/ <br>
+    <br>
+  By clicking on <a href="{% url 'peaks-filter' %}">Filter peaks by location</a> you will access the form
+  to define the desired bounding box.</p>
+
+{% endblock %}

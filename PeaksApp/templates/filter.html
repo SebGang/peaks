@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Filter peaks by location</h2>
+    <p>Enter here the boundig box corners coordinates. The result will contains peaks with:</p>
+    <form method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+
+    <h3>Peaks located in the bounding box:</h3>
+    {% for obj in filter.qs %}
+        name: {{ obj.name }} - altitude: {{ obj.altitude }}m - lat: {{ obj.lat }} - long: {{ obj.long }}<br />
+    {% endfor %}
+{% endblock %}
